@@ -1,12 +1,16 @@
 import React from 'react';
+
 import Home from './pages/Home';
-import Header from './pages/Header';
+import Header from './components/Header';
+
+import GlobalStyle from './styles/global';
 
 const App: React.FC = () => {
   return (
     <>
       <Header />
       <Home />
+      <GlobalStyle />
     </>
   );
 };
