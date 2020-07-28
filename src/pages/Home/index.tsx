@@ -1,6 +1,8 @@
 import React, { useCallback, useState, FormEvent } from 'react';
 import Api from '../../services/api';
 
+import { Container, Form, Table, Error } from './styles';
+
 interface InfoAddress {
   bairro: string;
   cidade: string;
@@ -20,7 +22,7 @@ interface InfoAddress {
 
 const Home: React.FC = () => {
   const [cep, setCep] = useState('');
-  const [cepAddress, setCepAddress] = useState<InfoAddress>({} as InfoAddress);
+  const [cepAddress, setCepAddress] = useState<InfoAddress | null>(null);
   const [error, setError] = useState('');
 
   const handleSearchAddress = useCallback(
@@ -46,17 +48,36 @@ const Home: React.FC = () => {
   );
 
   return (
-    <>
-      <form onSubmit={handleSearchAddress}>
+    <Container>
+      <Form onSubmit={handleSearchAddress}>
         <input type="text" value={cep} onChange={e => setCep(e.target.value)} />
         <button type="submit">Buscar cep</button>
-      </form>
-      {error && <p>{error}</p>}
+      </Form>
+      {error && <Error>{error}</Error>}
 
-      <ul>
-        <li>{cepAddress.bairro}</li>
-      </ul>
-    </>
+      {cepAddress && (
+        <Table>
+          <thead>
+            <tr>
+              <th>Cep</th>
+              <th>Logradouro</th>
+              <th>Bairro</th>
+              <th>Cidade</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{cepAddress.cep}</td>
+              <td>{cepAddress.logradouro}</td>
+              <td>{cepAddress.bairro}</td>
+              <td>{cepAddress.cidade}</td>
+              <td>{cepAddress.estado_info?.nome}</td>
+            </tr>
+          </tbody>
+        </Table>
+      )}
+    </Container>
   );
 };
 
