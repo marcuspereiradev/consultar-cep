@@ -1,11 +1,13 @@
 import React from 'react';
 
+import { Container } from './styles';
+
 const Header: React.FC = () => {
   return (
     <>
-      <header>
+      <Container>
         <h1>Consultar cep</h1>
-      </header>
+      </Container>
     </>
   );
 };
