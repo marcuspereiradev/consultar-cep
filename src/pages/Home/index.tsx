@@ -51,7 +51,7 @@ const Home: React.FC = () => {
     <Container>
       <Form onSubmit={handleSearchAddress}>
         <input type="text" value={cep} onChange={e => setCep(e.target.value)} />
-        <button type="submit">Buscar cep</button>
+        <button type="submit">Consultar</button>
       </Form>
       {error && <Error>{error}</Error>}
 
