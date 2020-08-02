@@ -2,16 +2,12 @@
   Consultar Cep
 </h1>
 
-<p align="center">Consulta de CEP criado com Reac.js e Typescript.</p>
+<p align="center">Consult of CEP created with React.js, Styled Components and TypeScript.</p>
 
-##  Features
+## Features
 
-* Consulta CEP informando o endereço.
-* [Postmon](https://postmon.com.br/) foi a API utilizada para a requisição.
-
-<p align="center">
-  <img src = "./docs/Dashboard.png" width=800>
-</p>
+- Consult CEP informing the address.
+- [Postmon](https://postmon.com.br/) was the API used for the request.
 
 <p align="center">
   <img src = "./docs/home.gif" width=800>
@@ -54,8 +50,9 @@ Inside the created directory run the scripts in order to execute the application
 </p>
 
 ## License
+
 This project is under MIT license. See the archive [LICENSE](LICENSE.md) to more details.
 
 ## Authors
 
-|  [Marcus Pereira](https://github.com/marcuspereiradev)   |
+| [Marcus Pereira](https://github.com/marcuspereiradev) |
